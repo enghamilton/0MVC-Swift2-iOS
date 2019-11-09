@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,23 +19,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="put your text here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JcQ-Y8-jbt">
-                                <rect key="frame" x="60" y="40" width="150" height="40"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="my name Hamilton, iOS engineer put your text here - Autolayout" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JcQ-Y8-jbt">
+                                <rect key="frame" x="300" y="40" width="270" height="40"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="8M0-h8-r5h"/>
-                                    <constraint firstAttribute="width" constant="150" id="Qm4-iz-ZQd"/>
+                                    <constraint firstAttribute="height" constant="60" id="8M0-h8-r5h"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="190" y="100" width="180" height="67"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="60" y="40" width="150" height="67"/>
+                                </variation>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ikf-11-3oM">
+                                <rect key="frame" x="20" y="49" width="98" height="100"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ikf-11-3oM" secondAttribute="height" multiplier="49:50" id="mtk-zC-pCY"/>
+                                    <constraint firstAttribute="width" constant="98" id="ot4-PS-6BI"/>
+                                </constraints>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="49" width="160" height="160"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JcQ-Y8-jbt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="28S-xJ-zVn"/>
-                            <constraint firstItem="JcQ-Y8-jbt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="BWj-Wn-8nP"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JcQ-Y8-jbt" secondAttribute="bottom" priority="900" constant="50" id="QdU-wn-Pe3"/>
+                            <constraint firstItem="JcQ-Y8-jbt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="BWj-Wn-8nP"/>
+                            <constraint firstItem="Ikf-11-3oM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="baj-QH-3I8"/>
+                            <constraint firstItem="JcQ-Y8-jbt" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.45" id="epa-lb-Z2J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JcQ-Y8-jbt" secondAttribute="trailing" constant="10" id="iiL-fG-zV0"/>
+                            <constraint firstItem="Ikf-11-3oM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="mPV-h0-m4M"/>
                         </constraints>
                     </view>
                 </viewController>

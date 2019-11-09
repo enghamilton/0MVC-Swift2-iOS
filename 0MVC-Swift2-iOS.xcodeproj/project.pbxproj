@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2279783F2374D48A00CE6BCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2279783E2374D48A00CE6BCC /* UIKit.framework */; };
+		227978412374D49600CE6BCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227978402374D49600CE6BCC /* Foundation.framework */; };
 		227C95EE237497EC00CDF6B5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227C95ED237497EC00CDF6B5 /* Storyboard.storyboard */; settings = {ASSET_TAGS = (); }; };
 		227C95F02374981500CDF6B5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C95EF2374981500CDF6B5 /* UserModel.swift */; settings = {ASSET_TAGS = (); }; };
 		227C95F2237498E500CDF6B5 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C95F1237498E500CDF6B5 /* Webservice.swift */; settings = {ASSET_TAGS = (); }; };
+		228A3A2A23750C2F00E81B54 /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A3A2923750C2E00E81B54 /* MyCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
 		22CFAE62237480A0007451F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CFAE61237480A0007451F4 /* AppDelegate.swift */; };
 		22CFAE64237480A0007451F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CFAE63237480A0007451F4 /* ViewController.swift */; };
 		22CFAE67237480A0007451F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CFAE65237480A0007451F4 /* Main.storyboard */; };
@@ -37,9 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2279783E2374D48A00CE6BCC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		227978402374D49600CE6BCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		227C95ED237497EC00CDF6B5 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		227C95EF2374981500CDF6B5 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		227C95F1237498E500CDF6B5 /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		228A3A2923750C2E00E81B54 /* MyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomCell.swift; sourceTree = "<group>"; };
 		22CFAE5E237480A0007451F4 /* 0MVC-Swift2-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "0MVC-Swift2-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CFAE61237480A0007451F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22CFAE63237480A0007451F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227978412374D49600CE6BCC /* Foundation.framework in Frameworks */,
+				2279783F2374D48A00CE6BCC /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +91,8 @@
 		22CFAE552374809F007451F4 = {
 			isa = PBXGroup;
 			children = (
+				227978402374D49600CE6BCC /* Foundation.framework */,
+				2279783E2374D48A00CE6BCC /* UIKit.framework */,
 				22CFAE60237480A0007451F4 /* 0MVC-Swift2-iOS */,
 				22CFAE75237480A0007451F4 /* 0MVC-Swift2-iOSTests */,
 				22CFAE80237480A0007451F4 /* 0MVC-Swift2-iOSUITests */,
@@ -154,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				227C95ED237497EC00CDF6B5 /* Storyboard.storyboard */,
+				228A3A2923750C2E00E81B54 /* MyCustomCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228A3A2A23750C2F00E81B54 /* MyCustomCell.swift in Sources */,
 				22CFAE64237480A0007451F4 /* ViewController.swift in Sources */,
 				227C95F02374981500CDF6B5 /* UserModel.swift in Sources */,
 				227C95F2237498E500CDF6B5 /* Webservice.swift in Sources */,
@@ -432,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = "0MVC-Swift2-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mycompany.-MVC-Swift2-iOS";
@@ -443,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = "0MVC-Swift2-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mycompany.-MVC-Swift2-iOS";

@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import Foundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
 
+    var myArray: [String] = []
+    
+    let cellReuseIdentifier = "myCell"
+    
+    let webService = Webservice()
+    
+    
+    @IBOutlet weak var TableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        TableView.dataSource = self
+        for index in 1...20 {
+            myArray.append("user \( index )")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +34,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
+    {
+        return 20
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        //let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: IndexPath) as! MyCustomCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! MyCustomCell
+        
+        cell.myCellLabel.text = self.myArray[indexPath.row]
+        
+        return cell
+    }
 }
 
