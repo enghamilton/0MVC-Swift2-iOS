@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jGd-Cs-HM8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U75-u9-4ZY">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -9,7 +11,7 @@
         <!--MVC iOS Lavoropiu-->
         <scene sceneID="mAE-ob-ffq">
             <objects>
-                <viewController title="MVC iOS Lavoropiu" id="jGd-Cs-HM8" customClass="ViewController" customModule="_MVC_Swift2_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myMVC" title="MVC iOS Lavoropiu" id="jGd-Cs-HM8" customClass="ViewController" customModule="_MVC_Swift2_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KuM-AG-OUR"/>
                         <viewControllerLayoutGuide type="bottom" id="2LH-UO-kCH"/>
@@ -48,67 +50,54 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="simple text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Up-T9-6dU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAl-Dh-A4M">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="81" id="qlU-60-2lO">
-                                                            <variation key="widthClass=compact" constant="50"/>
-                                                        </constraint>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="qlU-60-2lO"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="widthClass=compact">
-                                                        <mask key="constraints">
-                                                            <include reference="qlU-60-2lO"/>
-                                                        </mask>
-                                                    </variation>
-                                                </textView>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="6Up-T9-6dU" secondAttribute="trailing" constant="20" id="1e7-xt-ZVj"/>
-                                                <constraint firstItem="6Up-T9-6dU" firstAttribute="leading" secondItem="LmH-2g-yY7" secondAttribute="trailing" constant="13" id="CnI-2B-UtN"/>
+                                                <constraint firstItem="rAl-Dh-A4M" firstAttribute="leading" secondItem="LmH-2g-yY7" secondAttribute="trailing" constant="18" id="Df4-VL-fMW"/>
                                                 <constraint firstItem="cHN-aW-naG" firstAttribute="top" secondItem="T5J-hv-GPi" secondAttribute="topMargin" constant="10" id="OET-Ge-9vf"/>
-                                                <constraint firstItem="6Up-T9-6dU" firstAttribute="top" secondItem="cHN-aW-naG" secondAttribute="bottom" constant="2" id="WXl-zo-Bk6"/>
                                                 <constraint firstItem="LmH-2g-yY7" firstAttribute="top" secondItem="T5J-hv-GPi" secondAttribute="top" constant="10" id="X4n-YL-S8R"/>
+                                                <constraint firstItem="rAl-Dh-A4M" firstAttribute="top" secondItem="cHN-aW-naG" secondAttribute="bottom" constant="8" id="XtK-Rx-5il"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="rAl-Dh-A4M" secondAttribute="trailing" constant="18" id="nza-bH-c9r"/>
                                                 <constraint firstItem="LmH-2g-yY7" firstAttribute="leading" secondItem="T5J-hv-GPi" secondAttribute="leadingMargin" constant="40" id="t4H-Qe-lhy"/>
                                                 <constraint firstItem="cHN-aW-naG" firstAttribute="leading" secondItem="LmH-2g-yY7" secondAttribute="trailing" constant="13" id="uZ2-h1-yP1"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
-                                                    <exclude reference="6Up-T9-6dU"/>
+                                                    <exclude reference="rAl-Dh-A4M"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="1e7-xt-ZVj"/>
-                                                    <exclude reference="CnI-2B-UtN"/>
-                                                    <exclude reference="WXl-zo-Bk6"/>
+                                                    <exclude reference="Df4-VL-fMW"/>
+                                                    <exclude reference="XtK-Rx-5il"/>
+                                                    <exclude reference="nza-bH-c9r"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
-                                                    <include reference="6Up-T9-6dU"/>
+                                                    <include reference="rAl-Dh-A4M"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="1e7-xt-ZVj"/>
-                                                    <include reference="CnI-2B-UtN"/>
-                                                    <include reference="WXl-zo-Bk6"/>
+                                                    <include reference="Df4-VL-fMW"/>
+                                                    <include reference="XtK-Rx-5il"/>
+                                                    <include reference="nza-bH-c9r"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
                                             <outlet property="imageThumb" destination="LmH-2g-yY7" id="j9X-rM-sTN"/>
-                                            <outlet property="textLabel" destination="6Up-T9-6dU" id="ZdD-9c-xBb"/>
+                                            <outlet property="myCellLabel" destination="rAl-Dh-A4M" id="hQo-PA-KxI"/>
                                             <segue destination="I6m-Wm-5KE" kind="presentation" id="9NP-tv-l1e"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                                 <variation key="heightClass=compact" misplaced="YES">
                                     <rect key="frame" x="0.0" y="40" width="600" height="380"/>
                                 </variation>
@@ -145,6 +134,7 @@
                         <viewControllerLayoutGuide type="bottom" id="R81-Lo-I7Y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gqh-ov-rSH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IV1-6p-cja">
@@ -156,8 +146,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <animations/>
                                 <items>
-                                    <navigationItem title="Title" id="b4X-4U-6gq">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="SsV-LF-ZIB"/>
+                                    <navigationItem title="Second Title" id="b4X-4U-6gq">
+                                        <barButtonItem key="backBarButtonItem" title="Voltar" id="VCl-7v-we6"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

@@ -11,7 +11,8 @@ import UIKit
 class MyCustomCell: UITableViewCell {
     
     @IBOutlet weak var imageThumb:UIImage!
-    @IBOutlet weak var myCellLabel: UITextView!
+    
+    @IBOutlet weak var myCellLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

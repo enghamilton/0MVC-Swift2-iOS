@@ -11,7 +11,7 @@ import Foundation
 
 class ViewController: UIViewController, UITableViewDataSource {
 
-    var myArray: [String] = []
+    var myArray:[String] = []
     
     let cellReuseIdentifier = "myCell"
     
@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view, typically from a nib.
         TableView.dataSource = self
         for index in 1...20 {
-            myArray.append("user \( index )")
+            self.myArray.append("user \( index )")
         }
     }
 
@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
-        return 20
+        return self.myArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
