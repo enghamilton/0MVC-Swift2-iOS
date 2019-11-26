@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 class ViewController: UIViewController, UITableViewDataSource {
-
+    
     var myArray:[String] = []
     
     let cellReuseIdentifier = "myCell"
@@ -27,8 +27,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         for index in 1...20 {
             self.myArray.append("user \( index )")
         }
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,5 +53,23 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
-}
+    
+    @IBAction func loadMySQL(sender: AnyObject) {
+        simpleDisplayAlert()
+        
+    }
+    
+    func loadProductsFromMySQL(completion:(String)-> Void){
+        let nameDisplay:String? = "{id=1, name=user 01, price=20.20, description= hamilton first description goes here}"
+        completion(nameDisplay!)
+    }
+    
+    func simpleDisplayAlert(){
+        loadProductsFromMySQL(){
+            (textDisplay) -> Void in
+            let myAlert = UIAlertView(title: "iOS RESTful", message: textDisplay, delegate: nil, cancelButtonTitle: "cancelar")
+            myAlert.show()
+        }
+    }
 
+}

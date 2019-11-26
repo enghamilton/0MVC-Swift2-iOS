@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221DB486238CE432001DDAF9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB485238CE432001DDAF9 /* SecondViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		2279783F2374D48A00CE6BCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2279783E2374D48A00CE6BCC /* UIKit.framework */; };
 		227978412374D49600CE6BCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227978402374D49600CE6BCC /* Foundation.framework */; };
 		227C95EE237497EC00CDF6B5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227C95ED237497EC00CDF6B5 /* Storyboard.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		221DB485238CE432001DDAF9 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		2279783E2374D48A00CE6BCC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		227978402374D49600CE6BCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		227C95ED237497EC00CDF6B5 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				22CFAE63237480A0007451F4 /* ViewController.swift */,
+				221DB485238CE432001DDAF9 /* SecondViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221DB486238CE432001DDAF9 /* SecondViewController.swift in Sources */,
 				228A3A2A23750C2F00E81B54 /* MyCustomCell.swift in Sources */,
 				22CFAE64237480A0007451F4 /* ViewController.swift in Sources */,
 				227C95F02374981500CDF6B5 /* UserModel.swift in Sources */,
