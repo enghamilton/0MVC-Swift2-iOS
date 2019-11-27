@@ -15,3 +15,7 @@ class Webservice:NSObject {
     }
     //someFunctionWithClosure("a","b"){(num1,num2)->Void in }
 }
+
+extension Webservice {
+    
+}

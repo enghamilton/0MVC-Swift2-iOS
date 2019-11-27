@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    //@IBOutlet weak var barItemLoad: UIBarButtonItem!
+    @IBOutlet weak var secondMainView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +18,11 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         //self.navigationItem.rightBarButtonItem = barItemLoad
+        /*
         let rightButton = UIBarButtonItem(title: "MVC Main TableView", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("simpleDisplayAlert:"))
         self.navigationItem.rightBarButtonItem = rightButton
+        */
+        //navigationController?.popViewControllerAnimated(true)
 
     }
 
@@ -29,10 +32,10 @@ class SecondViewController: UIViewController {
     }
     
 
-    @IBAction func backMainView(sender: AnyObject) {
-        
-    }
+    func backMainView(sender: AnyObject) {
     
+    }
+
     
     /*
     // MARK: - Navigation
