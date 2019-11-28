@@ -12,6 +12,8 @@ class SecondViewController: UIViewController {
 
     @IBOutlet weak var secondMainView: UIView!
     
+    @IBOutlet weak var backHome: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,12 +32,15 @@ class SecondViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     func backMainView(sender: AnyObject) {
     
     }
 
+    @IBAction func homeButton(sender: AnyObject) {
+        self.dismissViewControllerAnimated(false, completion: nil)
+        
+    }
     
     /*
     // MARK: - Navigation

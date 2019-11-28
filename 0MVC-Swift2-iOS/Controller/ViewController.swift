@@ -24,9 +24,11 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         TableView.dataSource = self
+        /*
         for index in 1...1 {
             self.myArray.append("user \( index )")
         }
+        */
         
     }
     
