@@ -50,8 +50,15 @@ class FirstViewController: UIViewController {
     
     
     @IBAction func buttonJavaPostgreSQL(sender: AnyObject) {
-        let myAlert = UIAlertView(title: "iOS RESTful", message: "Java Spring MVC JPA PostgreSQL", delegate: nil, cancelButtonTitle: "cancelar")
-        myAlert.show()
+        let instanceOfJavaBackEnd = Webservice()
+        instanceOfJavaBackEnd.loadProductsFromMySQL("https://javarestjson.herokuapp.com/api/produtos"){
+            (myDisplay)-> Void in
+            
+            let myAlert = UIAlertView(title: "iOS RESTful", message: "java spring MVC JPA PostgreSQL from REST database http://javarestjson.herokuapp.com/api/produtos \( myDisplay )", delegate: nil, cancelButtonTitle: "cancelar")
+            myAlert.show()
+            
+        }
+
     }
     
     

@@ -12,6 +12,11 @@ import Foundation
 class ViewController: UIViewController, UITableViewDataSource {
     
     var myArray:[String] = []
+   
+    var arrDict :NSMutableArray=[]
+    var arrDictId:NSMutableArray = []
+    var arrDictName:NSMutableArray = []
+    var arrDictPrice:NSMutableArray = []
     
     let cellReuseIdentifier = "myCell"
     
@@ -92,7 +97,34 @@ class ViewController: UIViewController, UITableViewDataSource {
             let dataString:String? = String(NSString(data: data!, encoding: NSUTF8StringEncoding))
             var tmpArrayResponseString = dataString!.componentsSeparatedByString("<html>")
             let responseString:String? = tmpArrayResponseString[0]
-            completion(responseString!)
+            
+            var tmpArrayJSON = responseString!.componentsSeparatedByString("(")
+            let resultStringWithJson:String? = tmpArrayJSON[1]
+            completion(resultStringWithJson!)
+            //until here it works fine !
+            
+            //
+            // begin : try to test from here
+            /*
+            let dataFromJSONString = resultStringWithJson!.dataUsingEncoding(NSUTF8StringEncoding)
+            let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData(dataFromJSONString!) as! NSDictionary
+            
+            for var j=0 ; j < (dictionary.valueForKey("Products") as! NSArray).count ; j++ {
+                
+                self.arrDictId.addObject(dictionary.valueForKey("pid") as! NSMutableArray)
+                self.arrDictName.addObject(dictionary.valueForKey("name") as! NSMutableArray)
+                self.arrDictPrice.addObject(dictionary.valueForKey("price") as! NSMutableArray)
+                
+            }
+            
+            if let swiftArray = self.arrDictName as NSArray as? [String]{
+                completion(swiftArray[0] ?? "something went wrong")
+            }
+            */
+            //
+            // ends : try to test ending
+            
+            //completion(resultStringWithJson!)
             
             if let urlContent = data {
                 
