@@ -45,6 +45,32 @@ class ThirdViewController: UIViewController {
         
     }
     
+    @IBAction func buttonDotNetPostgreSQL(sender: AnyObject) {
+       
+        let loadWebservice = Webservice()
+        loadWebservice.loadProductsFromMySQL("https://rest-csharp.herokuapp.com/api/values/5"){
+            (myDisplay)-> Void in
+            
+            let myAlert = UIAlertView(title: "iOS RESTful", message: "from REST  https://rest-csharp.herokuapp.com/api/values/5 \( myDisplay )", delegate: nil, cancelButtonTitle: "cancelar")
+            myAlert.show()
+            
+        }
+        
+    }
+    
+    @IBAction func buttonNodeJS(sender: AnyObject) {
+        
+        let loadWebservice = Webservice()
+        loadWebservice.loadProductsFromMySQL("https://nodejs-ios-android.herokuapp.com"){
+            (myDisplay)-> Void in
+            
+            let myAlert = UIAlertView(title: "iOS RESTful", message: "from REST  https://nodejs-ios-android.herokuapp.com \( myDisplay )", delegate: nil, cancelButtonTitle: "cancelar")
+            myAlert.show()
+            
+        }
+        
+    }
+    
     
     @IBAction func backSecondView(sender: AnyObject) {
         self.dismissViewControllerAnimated(false, completion: nil)

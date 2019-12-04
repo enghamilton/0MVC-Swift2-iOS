@@ -9,6 +9,12 @@
 import UIKit
 import Foundation
 
+/*
+protocol ViewControllerProtocol: class {
+    func segueWithValues()
+}
+*/
+
 class ViewController: UIViewController, UITableViewDataSource {
     
     var myArray:[String] = []
@@ -22,6 +28,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     let webService = Webservice()
     
+    //weak var delegateItems: ViewControllerProtocol!
     
     @IBOutlet weak var TableView: UITableView!
     
@@ -100,12 +107,65 @@ class ViewController: UIViewController, UITableViewDataSource {
             
             var tmpArrayJSON = responseString!.componentsSeparatedByString("(")
             let resultStringWithJson:String? = tmpArrayJSON[1]
-            completion(resultStringWithJson!)
+            
+            //completion(resultStringWithJson!)
             //until here it works fine !
+            
+            let resultData = resultStringWithJson!.dataUsingEncoding(NSUTF8StringEncoding)
+            
+            do {
+                let jsonResult = try NSJSONSerialization.JSONObjectWithData(resultData!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                
+                 // stackoverflow.com/questions/24764755/swift-how-to-loop-through-nsdictionary
+                let dataArray = jsonResult["products"] as! NSArray;
+                
+                print("Data items count: \(dataArray.count)")
+                
+                for item in dataArray { // loop through data items
+                    let obj = item as! NSDictionary
+                    for (key, value) in obj {
+                        print("Property: \"\(key as! String)\"")
+                        if key as! String == "name" {
+                            self.arrDictName.addObject(value)
+                        }
+                    }
+                }
+                
+                completion("arrDicName array with values are \(self.arrDictName.description)")
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+                completion(error.localizedDescription)
+            }
+            
+            //https:/ /stackoverflow.com/questions/30480672/how-to-convert-a-json-string-to-a-dictionary
+            /*
+            func convertStringToDictionary(text: String) -> [String:AnyObject]? {
+                if let data = text.dataUsingEncoding(NSUTF8StringEncoding) {
+                    do {
+                        return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String:AnyObject]
+                    } catch let error as NSError {
+                        print(error)
+                    }
+                }
+                return nil
+            }
+            
+            let str = "{\"name\":\"James\"}"
+            
+            let result = convertStringToDictionary(str)
+            */
             
             //
             // begin : try to test from here
             /*
+            
+            let resultStringWithJson2 = resultStringWithJson! as NSString
+            resultStringWithJson2.stringByReplacingOccurrencesOfString("{\"", withString: "{\\\"")
+            resultStringWithJson2.stringByReplacingOccurrencesOfString(":\"", withString: ":\\\"")
+            let text:String? = resultStringWithJson2 as String
+            text?.dataUsingEncoding(NSUTF8StringEncoding)
+            
             let dataFromJSONString = resultStringWithJson!.dataUsingEncoding(NSUTF8StringEncoding)
             let dictionary:NSDictionary = NSKeyedUnarchiver.unarchiveObjectWithData(dataFromJSONString!) as! NSDictionary
             
@@ -130,7 +190,13 @@ class ViewController: UIViewController, UITableViewDataSource {
                 
                 do {
                     
-                    let jsonGetString = String(data: urlContent, encoding: NSUTF8StringEncoding)
+                    //let jsonGetString = String(data: urlContent, encoding: NSUTF8StringEncoding)
+                    /*
+                    let jsonResult = try NSJSONSerialization.JSONObjectWithData(urlContent, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                    for var j=0 ; j < (jsonResult.valueForKey("Products") as! NSArray).count ; j++ {
+
+                    }
+                    */
                     //let jsonResult = try NSJSONSerialization.JSONObjectWithData(urlContent, options: NSJSONReadingOptions.MutableContainers)
                     
                     //let text = jsonResult as? String

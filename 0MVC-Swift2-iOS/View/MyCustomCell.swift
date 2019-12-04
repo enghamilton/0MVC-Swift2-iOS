@@ -10,8 +10,7 @@ import UIKit
 
 class MyCustomCell: UITableViewCell {
     
-    @IBOutlet weak var imageThumb:UIImage!
-    
+    @IBOutlet weak var imageThumbnail: UIImageView!
     @IBOutlet weak var myCellLabel: UILabel!
     
     override func awakeFromNib() {
