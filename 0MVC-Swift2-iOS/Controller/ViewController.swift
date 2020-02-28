@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import Foundation
-
+//import Foundation
+import CoreBluetooth
+import CoreData
 /*
 protocol ViewControllerProtocol: class {
     func segueWithValues()
@@ -28,6 +29,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     let webService = Webservice()
     
+    var centralmanager = CBCentralManager()
+    
+    let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
     //weak var delegateItems: ViewControllerProtocol!
     
     @IBOutlet weak var TableView: UITableView!
@@ -41,6 +46,14 @@ class ViewController: UIViewController, UITableViewDataSource {
             self.myArray.append("user \( index )")
         }
         */
+
+        //self.centralmanager = CBCentralManager(delegate: self, queue: nil)
+        
+        let entityDescription = NSEntityDescription.entityForName("Product", inManagedObjectContext: self.context)
+        
+        let newProductItem = NSManagedObject(entity: entityDescription!, insertIntoManagedObjectContext: self.context)
+        
+        //newProductItem.setValue("user 01", forKey:"name")
         
     }
     
@@ -87,6 +100,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             let myAlert = UIAlertView(title: "iOS RESTful", message: textForAlert, delegate: nil, cancelButtonTitle: "cancelar")
             myAlert.show()
         }
+        
         /*
         for index in 1...10 {
             self.myArray.append("user \( index )")

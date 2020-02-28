@@ -56,5 +56,7 @@
 			</dict>
 		</dict>
 	</dict>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string> Please allow bluetooth </string>
 </dict>
 </plist>

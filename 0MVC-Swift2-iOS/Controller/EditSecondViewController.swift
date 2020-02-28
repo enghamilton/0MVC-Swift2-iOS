@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class EditSecondViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class EditSecondViewController: UIViewController {
     
     @IBOutlet weak var editDescription:UITextField!
     
+    // Retreive the managedObjectContext from AppDelegate
+    let managedObjContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +38,13 @@ class EditSecondViewController: UIViewController {
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "POST"
         
-        let labelId:String? = "1"
+        let labelId:Optional<String> = "1"
         let labelName:String? = "username here"
         let labelPrice:String? = "199.99"
         let labelPhone:String? = "11 91234 5678"
         let labelDescription:String? = "iOS engineer Hamilton description"
         
-        let postString = "pid="+labelId!+"&name="+labelName!+"&price="+labelPrice!+"&description="+labelDescription!
+        let postString = "pid="+labelId!+"&name="+labelName!+"&price="+labelPrice!+"&phone="+labelPhone!+"&description="+labelDescription!
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
@@ -49,6 +52,9 @@ class EditSecondViewController: UIViewController {
             
             if let urlContent = data {
                 
+                let dataReceived = NSString(data: urlContent, encoding: NSUTF8StringEncoding) as! String
+                completion(dataReceived)
+                /*
                 do {
                     
                     
@@ -56,7 +62,7 @@ class EditSecondViewController: UIViewController {
                     print("JSON serialization failed \(error)")
                     
                 }
-                
+                */
             } else {
                 /*
                 let myJSONDefault:String? = "{'id'=1, 'name'='username 01', 'price'='19.99', 'description'='hamilton put a description here'}"
@@ -72,6 +78,29 @@ class EditSecondViewController: UIViewController {
     @IBAction func buttonEditSaveMySQL(sender: AnyObject){
         editProductsFromMySQL(){
             (buttonEditPressed)-> Void in
+            
+            let alertEdit = UIAlertController(title: "Insert values CoreData", message: "Insert Users info", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: { (saveUIAlertAction)-> Void  in
+                
+            })
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {(cancelAlertAction)-> Void in
+                
+            })
+            
+            alertEdit.addTextFieldWithConfigurationHandler { (myUITextField) -> Void in
+                //do something
+            }
+            
+            alertEdit.addAction(saveAction)
+            
+            alertEdit.addAction(cancelAction)
+            
+            self.presentViewController(alertEdit, animated: true, completion: {
+                ()-> Void in
+                // do nothing
+            })
             
         }
     }
