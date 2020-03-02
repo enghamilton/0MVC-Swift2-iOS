@@ -18,7 +18,7 @@ For SQLite3 when no using CoreData you can see this  https://github.com/enghamil
 
 CoreBluetooth is under development
 
-![GitHub Logo](/images/logo.png)
+![iOS XCode 7 screenshoot](https://github.com/enghamilton/0MVC-Swift2-iOS/blob/master/Captura%20de%20Tela%202019-11-29%20%C3%A0s%2001.02.57.png)
 Format: ![Alt Text](url)
 
 First Header | Second Header
